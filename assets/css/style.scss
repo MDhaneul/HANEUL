@@ -1,0 +1,401 @@
+@charset "utf-8";
+@import "_var", "_mixin";
+@font-face{
+    font-family: DOSm;
+    font-weight: 400;
+    src: url(../fonts/DOSMyungjo.eot);
+    src: local("★"),
+        url(../fonts/DOSMyungjo.woff) format("woff"),
+        url(../fonts/DOSMyungjo.ttf) format("truetype");
+}
+
+/* tag reset */
+body, h1, h2, h3, h4, ul, p{margin: 0; padding: 0;}
+h1, h2, h3, h4{font-size: 100%; font-weight: 400;}
+ul{list-style: none;}
+a:link, a:visited, a:hover, a:active{text-decoration: none; color: inherit;}
+img{vertical-align: top; border: none; max-width: 100%;}
+button{border: none; background: none; cursor: pointer; font-family: inherit; font-size: inherit; color: inherit;}
+header, nav, section, footer{display: block;}
+
+.clearfix:after{content: "";display: block;clear: both;}
+.sr-only{position: absolute;top: 0;left: -9999px;}
+
+body{font-family: DOSm; font-size: 20px; line-height: 1.5; color: $HNgrey; word-break: keep-all;}
+
+/* common */
+#skip a{position: absolute; top: 0; left: -9999px; z-index: 3000;}
+#skip a:focus{left: 0; width: 100%; height: 50px; line-height: 50px; text-align: center; background: $HNgreen; color: #fff;}
+
+#header{
+    #hamburger{
+        position: fixed; top: 35px; left: 35px; width: 43px; height: 50px; z-index: 2000;
+        &:focus{outline: 3px dotted #fffc3b;}
+        .line{
+            @include transition(all 0.7s);
+            position: absolute;
+            width: 100%; height: 5px; background: #333; left: 0;
+            &.top{top: 7.5px;}
+            &.mid{top: 22.5px;}
+            &.btm{top: 37.5px;}
+        }
+        &.addon{
+            .line{background: #fff;}
+            .top{@include transform(scaleY(1.5));
+                top: 22.5px;}
+            .mid{opacity: 0;}
+            .btm{@include transform(scaleY(1.7));
+                top: 22.5px;}
+        }
+        &.ham_bg{
+            background: $HNblack;
+            .line{background: #fff;}
+        }
+        &.ham_bg.addon{background: none;}
+    }
+    .return_home{
+        position: fixed; top: 35px; left: 78px; width: 200px; height: 50px; background: $HNblack; text-align: center; color: #fff; font-size: 35px; line-height: 50px; z-index: 2000;
+        &:focus{outline: 3px dotted #fffc3b;}
+        &.addon{display: none;}
+        &:after{
+            @include transition(all 0.5s);
+            content: ""; position: absolute; opacity: 0; top: 0; left: 0; background: $HNblack; width: 100%; height: 100%;
+        }
+        &:hover:after, &:focus:after{content: "HOME"; opacity: 1;}
+    }
+    #gnb{
+        visibility: hidden; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: url(../images/common/nav_bg.jpg) no-repeat center;
+        overflow-y: auto; z-index: 1995;
+        .gnb_window{
+            position: absolute; top: 20%; left: 20%; width: 60%; height: 60%; background: url(../images/common/window.png) no-repeat center;
+            @include bgSize(contain);
+        }
+        > ul{
+            position: relative; width: 100%; height: 100%; color: $HNblack; line-height: 2; text-align: center;
+            > li{
+                position: absolute; top: 40%; width: 70px; height: 70px;
+                a{ 
+                    width: 100%; height: 100%; background: no-repeat top center; padding-top: 55px;
+                    &:focus{outline: 3px dotted $HNgreen;}
+                }
+            }
+            > li:nth-child(1){
+                left: 36%;
+                a{background-image: url(../images/common/home.png);}
+            }
+            > li:nth-child(2){
+                left: 42%;
+                a{background-image: url(../images/common/about.png);}
+            }
+            > li:nth-child(3){
+                left: 48%;
+                > a{background-image: url(../images/common/folder.png);}
+                > a.open_icon{background-image: url(../images/common/folder_open.png);}
+                ul{
+                    position: relative; margin-left: -200vw; opacity: 0; padding-top: 15px; width: 432px; height: 250px; background: url(../images/common/window_dep2.png) no-repeat center;
+                    &.dep_open{opacity: 1; margin-left: 0;}
+                    li{
+                        position: absolute; top: 10%; background: no-repeat top center; width: 150px; height: 70px;
+                        a{display: block; width: 100%; height: 100%; padding-top: 40px;}
+                    }
+                    li:nth-child(2){
+                        top: 20%; left: 10%;
+                        a{background-image: url(../images/common/home.png);}
+                    }
+                    li:nth-child(3){
+                        top: 20%; left: 50%;
+                        a{background-image: url(../images/common/design.png);}
+                    }
+                    li:nth-child(4){
+                        top: 60%; left: 10%;
+                        a{background-image: url(../images/common/web.png);}
+                    }
+                }
+            }
+        }
+    }
+}
+
+#footer{
+    position: fixed; color: $HNgrey; bottom: 0; width: 100vw; height: 50px; z-index: 1500;
+    p{position: absolute; bottom: 10px; right: 35px; padding: 0px 10px; background: $HNblack;}
+}
+
+/* index */
+.intro_video{
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 1500; background: #000;
+}
+#content.idx_bg{
+    position: relative; width: 100vw; height: 100vh; overflow: hidden;
+    video{position: fixed; top: 0; left: 0; width: 100%; height: auto; z-index: -1;}
+    .idx_blur_box{
+        @include transform(scale(1.5));
+        @include transition(transform 0.7s);
+        position: absolute; top: 5%; left: 5%; width: 90%; height: 90%; border: 3px solid $HNgrey; background: $HNblack; opacity: 0.9;
+        &.action{@include transform(scale(1));}
+    }
+    .idx_who{ 
+        position: absolute; top: 45%; left: 20%; width: 400px; height: auto; opacity: 0;
+        &:before, &:after{
+            @include transition(all 0.5s);
+            opacity: 0;
+        }
+        &:before{content: "ABOUT HN"; position: absolute; top: 50%; left: 20%; padding-left: 20px; width: 270px; height: 60px; font-size: 60px; line-height: 60px; background: #000;}
+        &:after{content: "X"; position: absolute; top: 38%; right: -2%; width: 50px; height: 50px; line-height: 50px; font-size: 65px; color: $HNgreen; background: #fff; text-align: center;}
+        &:hover:before, &:focus:before, &:hover:after, &:focus:after{opacity: 1;}
+    }
+    .idx_port{
+        position: absolute; top: 39%; right: 20%; width: 400px; height: auto; opacity: 0;
+        &:before, &:after{
+            @include transition(all 0.5s);
+            opacity: 0;
+        }
+        &:before{content: "PORTFOLIO"; position: absolute; top: 50%; left: 10%; padding-left: 20px; width: 340px; height: 70px; font-size: 70px; line-height: 70px; background: #000;}
+        &:after{content: "X"; position: absolute; top: 38%; right: -10%; width: 50px; height: 50px; line-height: 50px; font-size: 65px; color: $HNgreen; background: #fff; text-align: center;}
+        &:hover:before, &:focus:before, &:hover:after, &:focus:after{opacity: 1;}
+    }
+}
+
+/* about */
+#content.about_cnt{
+    width: 100vw; height: 400vh; overflow: hidden;
+    video{position: fixed; top: 0; left: 0; width: 100%; height: auto; z-index: -1;}
+    .about_blur_box{
+        @include transform(scale(1.5));
+        @include transition(transform 0.7s);
+        position: fixed; top: -5%; left: -5%; width: 90%; height: 90%; border: 3px solid $HNgrey; background: $HNblack; opacity: 0.95;
+        &.action{@include transform(scale(1));}
+    }
+    .about_cnt1{
+        width: 100%; height: 100vh;
+        h1{
+            @include transform(scale(1.5));
+            @include transition(transform 0.7s);
+            position: absolute; top: 40%; left: 30%; width: 50%; height: auto;
+            &.action{@include transform(scale(1));}
+            &:before, &:after{
+                @include transition(all 0.5s);
+                opacity: 0; z-index: 1500;
+            }
+            &:before{content: "ABOLUTELY COOL PROFILE"; position: absolute; top: 50%; left: 10%; padding-left: 20px; width: 540px; height: 140px; font-size: 70px; line-height: 70px; background: #000;}
+            &:after{content: "X"; position: absolute; top: 38%; right: 28%; width: 50px; height: 50px; line-height: 50px; font-size: 65px; color: $HNgreen; background: #fff; text-align: center;}
+            &:hover:before, &:focus:before, &:hover:after, &:focus:after{opacity: 1;}
+        }
+    }
+    .about_cnt2{
+        width: 100%; height: 100vh; position: relative;
+        ul{
+            @include transition(opacity 0.5s);
+            position: absolute; top: 70%; right: 40%; width: 700px; height: 700px; opacity: 0;
+            &.move{opacity: 1;}
+            li{ 
+                font-size: 35px;
+                border-right: 10px solid #fff;
+                margin: 20px 0;
+                opacity: 0;
+                white-space: nowrap;
+                overflow: hidden;
+                &.typing:nth-child(1){
+                    @include animation(typing 2s steps(40, end) forwards, blink-caret 0.5s 4 forwards);
+                    width: 350px;
+                }
+                &.typing:nth-child(2){
+                    @include animation(typing 2s 2s steps(40, end) forwards, blink-caret 0.5s 2s 4 forwards);
+                    width: 360px;
+                }
+                &.typing:nth-child(3){
+                    @include animation(typing 2s 4s steps(40, end) forwards, blink-caret 0.5s 4s 4 forwards);
+                    width: 470px;
+                }
+                &.typing:nth-child(4){
+                    @include animation(typing 2s 7s steps(40, end) forwards, blink-caret 0.5s 7s 4 forwards);
+                    width: 580px;
+                }
+                &.typing:nth-child(5){
+                    @include animation(typing 2s 9s steps(40, end) forwards, blink-caret 0.5s 9s 4 forwards);
+                    width: 300px;
+                }
+                &.typing:nth-child(6){
+                    @include animation(typing 2s 11s steps(40, end) forwards, blink-caret 0.5s 11s 4 forwards);
+                    width: 420px;
+                }
+                &.typing:nth-child(7){
+                    @include animation(typing 2s 13s steps(40, end) forwards, blink-caret 0.5s 13s infinite);
+                    width: 400px;
+                }
+            }
+        }
+        .about_cnt2_bg{
+            @include transition(all 0.5s);
+            position: absolute; top: 70%; right: -3%; background: url(../images/about/aboutA.png) no-repeat center; width: 500px; height: 500px; opacity: 0;
+            @include bgSize(contain);
+            &:hover{background-image: url(../images/about/aboutA_color.png);}
+            &.move{opacity: 1;}
+        }
+    }
+    .about_cnt3{
+        position: relative; width: 100%; height: 100vh;
+        ul{
+            @include transition(opacity 0.5s);
+            position: absolute; top: 50%; left: 15%; width: 700px; height: 700px; opacity: 0;
+            &.move{opacity: 1;}
+            li{ 
+                font-size: 35px;
+                border-right: 10px solid #fff;
+                margin: 20px 0;
+                opacity: 0;
+                white-space: nowrap;
+                overflow: hidden;
+                &.typing:nth-child(1){
+                    @include animation(typing 2s steps(40, end) forwards, blink-caret 0.5s 4 forwards);
+                    width: 450px;
+                }
+                &.typing:nth-child(2){
+                    @include animation(typing 2s 2s steps(40, end) forwards, blink-caret 0.5s 2s 4 forwards);
+                    width: 460px;
+                }
+                &.typing:nth-child(3){
+                    @include animation(typing 2s 4s steps(40, end) forwards, blink-caret 0.5s 4s 4 forwards);
+                    width: 430px;
+                }
+                &.typing:nth-child(4){
+                    @include animation(typing 2s 7s steps(40, end) forwards, blink-caret 0.5s 7s 4 forwards);
+                    width: 620px;
+                }
+                &.typing:nth-child(5){
+                    @include animation(typing 2s 9s steps(40, end) forwards, blink-caret 0.5s 9s 4 forwards);
+                    width: 420px;
+                }
+                &.typing:nth-child(6){
+                    @include animation(typing 2s 11s steps(40, end) forwards, blink-caret 0.5s 11s 4 forwards);
+                    width: 420px;
+                }
+                &.typing:nth-child(7){
+                    @include animation(typing 2s 13s steps(40, end) forwards, blink-caret 0.5s 13s 4 forwards);
+                    width: 480px;
+                }
+                &.typing:nth-child(8){
+                    @include animation(typing 2s 15s steps(40, end) forwards, blink-caret 0.5s 15s infinite);
+                    width: 480px;
+                }
+            }
+        }
+    }
+    .about_cnt4{
+        position: relative; width: 100%; height: 100vh;
+        ul{
+            @include transition(opacity 0.5s);
+            position: absolute; top: 20%; left: 30%; width: 700px; height: 700px; opacity: 0;
+            &.move{opacity: 1;}
+            li{position: relative;
+                button{
+                    display: block;
+                    text-align: left;
+                    font-size: 35px;
+                    border-right: 10px solid #fff;
+                    margin: 20px 0;
+                    padding: 0;
+                    opacity: 0;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+                &.typing:nth-child(1) button{
+                    @include animation(typing 1s steps(40, end) forwards, blink-caret 0.5s 2 forwards);
+                    width: 270px;
+                }
+                &.typing:nth-child(2) button{
+                    @include animation(typing 1s 1s steps(40, end) forwards, blink-caret 0.5s 1s 2 forwards);
+                    width: 200px;
+                }
+                &.typing:nth-child(3) button{
+                    @include animation(typing 1s 2s steps(40, end) forwards, blink-caret 0.5s 2s 2 forwards);
+                    width: 330px;
+                }
+                &.typing:nth-child(4) button{
+                    @include animation(typing 1s 3s steps(40, end) forwards, blink-caret 0.5s 3s 2 forwards);
+                    width: 200px;
+                }
+                &.typing:nth-child(5) button{
+                    @include animation(typing 1s 4s steps(40, end) forwards, blink-caret 0.5s 4s 2 forwards);
+                    width: 250px;
+                }
+                &.typing:nth-child(6) button{
+                    @include animation(typing 1s 5s steps(40, end) forwards, blink-caret 0.5s 5s 2 forwards);
+                    width: 200px;
+                }
+                &.typing:nth-child(7) button{
+                    @include animation(typing 1s 6s steps(40, end) forwards, blink-caret 0.5s 6s infinite);
+                    width: 440px;
+                }
+                &:hover, &:focus{color: $HNgreen;}
+                div{position: absolute; width: 100px; height: 100px; background: #000;}
+                &:nth-child(1) div{top: 0; left: 700px;}
+                &:nth-child(2) div{top: 0; left: 700px;}
+                &:nth-child(3) div{top: 0; left: 700px;}
+                &:nth-child(4) div{top: 0; left: 700px;}
+                &:nth-child(5) div{top: 0; left: 700px;}
+                &:nth-child(6) div{top: 0; left: 700px;}
+                &:nth-child(7) div{top: 0; left: 700px;}
+            }
+        }
+    }
+}
+
+@include keyframes(typing) {
+    from {width: 0; opacity: 1;}
+    to {opacity: 1;}
+}
+@include keyframes(blink-caret){
+    0% {border-color: transparent;}
+    50% {border-color: #fff;}
+    100% {border-color: transparent;}
+}
+/* 타이핑 효과
+@keyframes typing { from { width: 0; } }
+@keyframes blink-caret { 50% { border-color: transparent; } }
+
+h1 { 
+	font: bold 300% Consolas, Monaco, monospace;
+	border-right: 1em solid black;
+	width: 16.5em; 
+	width: 21ch;
+	margin: 2em 1em;
+	white-space: nowrap;
+	overflow: hidden;
+	animation: typing 7s steps(21, end),
+	           blink-caret .5s step-end infinite alternate;
+} */
+
+/* choice */
+#content.cho_cnt{
+    position: relative; width: 100vw; height: 100vh; overflow: hidden;
+    video{position: fixed; top: 0; left: 0; width: 100%; height: auto; z-index: -1;}
+    .cho_blur_box{
+        position: absolute; top: -150%; left: 5%; width: 90%; height: 90%; border: 3px solid $HNgrey; background: $HNblack; opacity: 0;
+    }
+    .cho_design{ 
+        position: absolute; top: 30%; left: 20%; width: 250px; height: 200px; opacity: 0;
+        &:before, &:after{
+            @include transition(all 0.5s);
+            opacity: 0;
+        }
+        &:before{content: "DESIGN_PAGE"; position: absolute; top: 65%; left: -8%; padding-left: 20px; width: 360px; height: 60px; font-size: 60px; line-height: 60px; background: #000;}
+        &:after{content: "X"; position: absolute; top: 46%; right: -57%; width: 50px; height: 50px; line-height: 50px; font-size: 65px; color: $HNgreen; background: #fff; text-align: center;}
+        &:hover:before, &:focus:before, &:hover:after, &:focus:after{opacity: 1;}
+    }
+    .cho_web{
+        position: absolute; top: 42%; right: 20%; width: 400px; height: auto; opacity: 0;
+        &:before, &:after{
+            @include transition(all 0.5s);
+            opacity: 0;
+        }
+        &:before{content: "WEB_PAGE"; position: absolute; top: 20%; left: 10%; padding-left: 20px; width: 320px; height: 70px; font-size: 70px; line-height: 70px; background: #000;}
+        &:after{content: "X"; position: absolute; top: 35%; right: -5%; width: 50px; height: 50px; line-height: 50px; font-size: 65px; color: $HNgreen; background: #fff; text-align: center;}
+        &:hover:before, &:focus:before, &:hover:after, &:focus:after{opacity: 1;}
+    }
+}
+
+@media all and (max-width: 1260px) {
+    body{font-size: 16px;}
+}
