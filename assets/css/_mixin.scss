@@ -23,10 +23,6 @@
     -o-transition-delay: $value;
     transition: $value;
 }
-@mixin blur($value) {
-    -webkit-filter: blur($value);
-    filter: blur($value);
-}
 @mixin bgSize ($value...) {
     -webkit-background-size: $value;
     -moz-background-size: $value;
@@ -38,6 +34,11 @@
     -moz-animation: $value;
     -o-animation: $value;
     animation: $value;
+}
+@mixin borderBox{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 @mixin keyframes($value...) {
     @-webkit-keyframes #{$value} {
