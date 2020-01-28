@@ -1367,10 +1367,10 @@ body {
       -o-transition: all 1s;
       transition: all 1s;
       position: absolute;
-      top: 15%;
+      top: 13%;
       left: 12%;
       width: 80%;
-      height: 65%;
+      height: 70%;
       opacity: 0;
       margin-top: 200px; }
       #content.web_cnt .web_cnt2 .web_tab.move {
@@ -1404,7 +1404,7 @@ body {
         top: 0;
         left: 130px;
         width: 1300px;
-        height: 630px;
+        height: 700px;
         border: 3px solid #fff; }
       #content.web_cnt .web_cnt2 .web_tab .tabpanel {
         position: absolute;
@@ -1457,10 +1457,10 @@ body {
       -o-transition: all 1s;
       transition: all 1s;
       position: absolute;
-      top: 15%;
+      top: 13%;
       right: 3%;
       width: 80%;
-      height: 65%;
+      height: 70%;
       opacity: 0;
       margin-top: 200px; }
       #content.web_cnt .web_cnt3 .web_tab.move {
@@ -1494,7 +1494,7 @@ body {
         top: 0;
         left: 130px;
         width: 1300px;
-        height: 630px;
+        height: 700px;
         border: 3px solid #fff; }
       #content.web_cnt .web_cnt3 .web_tab .tabpanel {
         position: absolute;
