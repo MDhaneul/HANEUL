@@ -38,15 +38,15 @@ $(document).ready(function() {
 
             }
             else if (scrollY <= cntPosY[1] - 360) {
-                $bBox.stop().animate({top: '10%', left: '15%', width: '90%', height: '90%'});
+                $bBox.stop().animate({top: 0, left: '15%', width: '90%', height: '100%'});
                 $('#cnt2').find('ul').children().addClass('typing').closest('article').siblings().find('ul').children().removeClass('typing');
             }
             else if (scrollY <= cntPosY[2] - 200) {
-                $bBox.stop().animate({top: '-5%', left: '-5%', width: '90%', height: '90%'});
+                $bBox.stop().animate({top: 0, left: '-5%', width: '90%', height: '100%'});
                 $('#cnt3').find('ul').children().addClass('typing').closest('article').siblings().find('ul').children().removeClass('typing');
             }
             else {
-                $bBox.stop().animate({top: '10%', left: '15%', width: '90%', height: '90%'});
+                $bBox.stop().animate({top: 0, left: '15%', width: '90%', height: '100%'});
                 $('#cnt4').find('ul').children().addClass('typing').closest('article').siblings().find('ul').children().removeClass('typing');
             }
         }, 10);

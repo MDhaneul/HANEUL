@@ -49,12 +49,16 @@
     <section id="content" class="web_cnt">
         <div class="web_blur_box"></div>
         <article id="cnt1" class="web_cnt1">
-            <div class="web_bg"></div>
+            <video class="web_bg" tabindex="-1" loop preload="auto" autoplay muted poster="../assets/images/common/loadings.jpg">
+                <source src="../assets/videos/port_bg.mp4" type="video/mp4">
+                <source src="../assets/videos/port_bg.ogv" type="video/ogg">
+                <source src="../assets/videos/port_bg.webm" type="video/webm">
+            </video>
             <h1 class="web_logo visible" tabindex="0"><img src="../assets/images/web/web_logo.svg" alt=""></h1>
         </article>
         <article id="cnt2" class="web_cnt2">
             <h2 class="visible">PC Web / Mercedes-Benz</h2>
-            <video class="benz_bg" tabindex="-1" loop preload="auto" autoplay muted poster="../assets/images/index/loadings.jpg">
+            <video class="benz_bg" tabindex="-1" loop preload="auto" autoplay muted poster="../assets/images/common/loadings.jpg">
                 <source src="../assets/videos/benz_web.mp4" type="video/mp4">
             </video>
             <div id="benzTab" class="web_tab visible">
@@ -64,15 +68,21 @@
                     <li id="tab_b3" class="tab last" role="tab" aria-controls="tabpanel_b3">ACCESSIBILITY</li>
                 </ul>
                 <div class="tabpanel_box">
-                    <div id="tabpanel_b1" class="tabpanel" role="tabpanel" aria-labelledby="tab_b1"></div>
-                    <div id="tabpanel_b2" class="tabpanel" role="tabpanel" aria-labelledby="tab_b2"></div>
-                    <div id="tabpanel_b3" class="tabpanel" role="tabpanel" aria-labelledby="tab_b3"></div>
+                    <div id="tabpanel_b1" class="tabpanel" role="tabpanel" aria-labelledby="tab_b1">
+                        <iframe src="mercedes/features.html" frameborder="0"></iframe>
+                    </div>
+                    <div id="tabpanel_b2" class="tabpanel" role="tabpanel" aria-labelledby="tab_b2">
+                        <iframe src="mercedes/comparing.html" frameborder="0"></iframe>
+                    </div>
+                    <div id="tabpanel_b3" class="tabpanel" role="tabpanel" aria-labelledby="tab_b3">
+                        <iframe src="mercedes/accessibility.html" frameborder="0"></iframe>
+                    </div>
                 </div>
             </div>
         </article>
         <article id="cnt3" class="web_cnt3">
             <h2 class="visible">Mobile Web / dongnae</h2>
-            <video class="dongnae_bg" tabindex="-1" loop preload="auto" autoplay muted poster="../assets/images/index/loadings.jpg">
+            <video class="dongnae_bg" tabindex="-1" loop preload="auto" autoplay muted poster="../assets/images/common/loadings.jpg">
                 <source src="../assets/videos/dongnae_web.mp4" type="video/mp4">
             </video>
             <div id="dongnaeTab" class="web_tab visible">

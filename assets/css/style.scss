@@ -25,12 +25,12 @@ body{font-family: DOSm; font-size: 20px; line-height: 1.5; color: $HNgrey; word-
 
 /* common */
 #skip a{position: absolute; top: 0; left: -9999px; z-index: 3000;}
-#skip a:focus{left: 0; width: 100%; height: 50px; line-height: 50px; text-align: center; background: $HNgreen; color: #fff;}
+#skip a:focus{left: 0; width: 100%; height: 50px; line-height: 50px; text-align: center; background: $HNgreen; color: #000; font-size: 25px;}
 
 #header{
     #hamburger{
         position: fixed; top: 35px; left: 35px; width: 43px; height: 50px; z-index: 2000;
-        &:focus{outline: 3px dotted #fffc3b;}
+        &:focus{outline: 2px solid #ffbb00;}
         .line{
             @include transition(all 0.7s);
             position: absolute;
@@ -54,42 +54,42 @@ body{font-family: DOSm; font-size: 20px; line-height: 1.5; color: $HNgrey; word-
         &.ham_bg.addon{background: none;}
     }
     .return_home{
+        @include radius(0 0 10px 0);
         position: fixed; top: 35px; left: 78px; width: 200px; height: 50px; background: $HNblack; text-align: center; color: #fff; font-size: 35px; line-height: 50px; z-index: 2000;
-        &:focus{outline: 3px dotted #fffc3b;}
+        &:focus{outline: 2px solid #ffbb00;}
         &.addon{display: none;}
-        &:after{
-            @include transition(all 0.5s);
-            content: ""; position: absolute; opacity: 0; top: 0; left: 0; background: $HNblack; width: 100%; height: 100%;
+        &:hover:after, &:focus:after{
+            @include radius(0 0 10px 0);
+            content: "HOME"; position: absolute; top: 0; left: 0; background: $HNblack; color: #ffbb00; width: 100%; height: 100%;
         }
-        &:hover:after, &:focus:after{content: "HOME"; opacity: 1;}
     }
     #gnb{
-        visibility: hidden; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-        background: url(../images/common/nav_bg.jpg) no-repeat center;
-        overflow-y: auto; z-index: 1995;
+        visibility: hidden; position: fixed; top: 0; left: 0; width: 100%; height: 100%; overflow-y: auto; z-index: 1995;
+        .gnb_bg{position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #000; opacity: 0.5;}
         .gnb_window{
             position: absolute; top: 20%; left: 20%; width: 60%; height: 60%; background: url(../images/common/window.png) no-repeat center;
             @include bgSize(contain);
         }
+        &.window_on .gnb_window{background-image: url(../images/common/window_non.png);}
         > ul{
             position: relative; width: 100%; height: 100%; color: $HNblack; line-height: 2; text-align: center;
             > li{
                 position: absolute; top: 40%; width: 70px; height: 70px;
                 a{ 
                     width: 100%; height: 100%; background: no-repeat top center; padding-top: 55px;
-                    &:focus{outline: 3px dotted $HNgreen;}
+                    &:focus{outline: 2px solid $HNgreen;}
                 }
             }
             > li:nth-child(1){
-                left: 36%;
+                left: 40%;
                 a{background-image: url(../images/common/home.png);}
             }
             > li:nth-child(2){
-                left: 42%;
+                left: 46%;
                 a{background-image: url(../images/common/about.png);}
             }
             > li:nth-child(3){
-                left: 48%;
+                left: 52%;
                 > a{background-image: url(../images/common/folder.png);}
                 > a.open_icon{background-image: url(../images/common/folder_open.png);}
                 ul{
@@ -132,11 +132,12 @@ body{font-family: DOSm; font-size: 20px; line-height: 1.5; color: $HNgrey; word-
     .idx_blur_box{
         @include transform(scale(1.5));
         @include transition(transform 0.7s);
-        position: absolute; top: 5%; left: 5%; width: 90%; height: 90%; border: 3px solid $HNgrey; background: $HNblack; opacity: 0.9;
+        position: absolute; top: 5%; left: 5%; width: 90%; height: 90%; border: 3px solid $HNgrey; background: $HNblack; opacity: 0.85;
         &.action{@include transform(scale(1));}
     }
     .idx_who{ 
         position: absolute; top: 45%; left: 20%; width: 400px; height: auto; opacity: 0;
+        &:focus{outline: 2px solid $HNgreen;}
         &:before, &:after{
             @include transition(all 0.5s);
             opacity: 0;
@@ -147,6 +148,7 @@ body{font-family: DOSm; font-size: 20px; line-height: 1.5; color: $HNgrey; word-
     }
     .idx_port{
         position: absolute; top: 39%; right: 20%; width: 400px; height: auto; opacity: 0;
+        &:focus{outline: 2px solid $HNgreen;}
         &:before, &:after{
             @include transition(all 0.5s);
             opacity: 0;
@@ -164,7 +166,7 @@ body{font-family: DOSm; font-size: 20px; line-height: 1.5; color: $HNgrey; word-
     .about_blur_box{
         @include transform(scale(1.5));
         @include transition(transform 0.7s);
-        position: fixed; top: -5%; left: -5%; width: 90%; height: 90%; border: 3px solid $HNgrey; background: $HNblack; opacity: 0.95;
+        position: fixed; top: -5%; left: -5%; width: 90%; height: 90%; border: 3px solid $HNgrey; background: $HNblack; opacity: 0.85;
         &.action{@include transform(scale(1));}
     }
     .about_cnt1{
@@ -228,10 +230,10 @@ body{font-family: DOSm; font-size: 20px; line-height: 1.5; color: $HNgrey; word-
         }
         .about_cnt2_bg{
             @include transition(all 0.5s);
-            position: absolute; top: 60%; margin-top: 200px; right: -3%; background: url(../images/about/aboutA.png) no-repeat center; width: 550px; height: 550px; opacity: 0;
+            position: absolute; top: 60%; margin-right: -600px; right: -3%; background: url(../images/about/aboutA.png) no-repeat center; width: 550px; height: 550px; opacity: 0;
             @include bgSize(contain);
             &:hover{background-image: url(../images/about/aboutA_color.png);}
-            &.move{margin-top: 0; opacity: 1;}
+            &.move{margin-right: 0; opacity: 1;}
         }
     }
     .about_cnt3{
@@ -301,7 +303,7 @@ body{font-family: DOSm; font-size: 20px; line-height: 1.5; color: $HNgrey; word-
                     overflow: hidden;
                     &:hover, &:focus{
                         color: $HNgreen;
-                        &:before{content: ""; position: absolute; top: 0; left: -50px; display: block; width: 550px; height: 100%; background: #000; opacity: 0.8; z-index: -1;}
+                        &:before{content: ""; position: absolute; top: 0; left: -50px; display: block; width: 550px; height: 100%; background: #000; opacity: 0.85; z-index: -1;}
                     }
                 }
                 &.typing:nth-child(1) button{
@@ -398,17 +400,49 @@ body{font-family: DOSm; font-size: 20px; line-height: 1.5; color: $HNgrey; word-
     }
 }
 
+/* choice */
+#content.cho_cnt{
+    position: relative; width: 100vw; height: 100vh; overflow: hidden;
+    video{position: fixed; top: 0; left: 0; width: 100%; height: auto; z-index: -1;}
+    .cho_blur_box{
+        position: absolute; top: -150%; left: 5%; width: 90%; height: 90%; border: 3px solid $HNgrey; background: $HNblack; opacity: 0;
+    }
+    .cho_design{ 
+        position: absolute; top: 30%; left: 20%; width: 250px; height: 200px; opacity: 0;
+        &:focus{outline: 2px solid $HNgreen;}
+        &:before, &:after{
+            @include transition(all 0.5s);
+            opacity: 0;
+        }
+        &:before{content: "DESIGN_PAGE"; position: absolute; top: 65%; left: -8%; padding-left: 20px; width: 360px; height: 60px; font-size: 60px; line-height: 60px; background: #000;}
+        &:after{content: "X"; position: absolute; top: 46%; right: -57%; width: 50px; height: 50px; line-height: 50px; font-size: 65px; color: $HNgreen; background: #fff; text-align: center;}
+        &:hover:before, &:focus:before, &:hover:after, &:focus:after{opacity: 1;}
+    }
+    .cho_web{
+        position: absolute; top: 42%; right: 20%; width: 400px; height: auto; opacity: 0;
+        &:focus{outline: 2px solid $HNgreen;}
+        &:before, &:after{
+            @include transition(all 0.5s);
+            opacity: 0;
+        }
+        &:before{content: "WEB_PAGE"; position: absolute; top: 20%; left: 10%; padding-left: 20px; width: 320px; height: 70px; font-size: 70px; line-height: 70px; background: #000;}
+        &:after{content: "X"; position: absolute; top: 35%; right: -5%; width: 50px; height: 50px; line-height: 50px; font-size: 65px; color: $HNgreen; background: #fff; text-align: center;}
+        &:hover:before, &:focus:before, &:hover:after, &:focus:after{opacity: 1;}
+    }
+}
+
 /* design */
 #content.design_cnt{
     width: 100%; height: 500vh; overflow: hidden;
     .design_blur_box{
         @include transform(scale(1.5));
         @include transition(transform 0.5s);
-        position: fixed; top: 0; left: 5%; width: 90%; height: 90%; border: 3px solid $HNgrey; background: $HNblack; opacity: 0.95;
+        position: fixed; top: 0; left: 5%; width: 90%; height: 90%; border: 3px solid $HNgrey; background: $HNblack; opacity: 0.85;
         &.action{@include transform(scale(1));}
     }
     .design_cnt1{
-        width: 100%; height: 100vh;
+        position: relative; width: 100%; height: 100vh;
+        video{position: fixed; top: 0; left: 0; width: 100%; height: auto; z-index: -1;}
         h1{
             @include transform(scale(0));
             @include transition(transform 1s);
@@ -424,27 +458,99 @@ body{font-family: DOSm; font-size: 20px; line-height: 1.5; color: $HNgrey; word-
         }
     }
     .design_cnt2{
-        width: 100%; height: 100vh;
+        width: 100%; height: 100vh; position: relative;
+        h2{
+            @include transition(all 1s);
+            position: absolute; top: 10%; left: 22%; font-size: 30px; opacity: 0; margin-top: 200px;
+            &.move{margin-top: 0; opacity: 1;}
+        }
+        .swiper-container{
+            top: 22%; left: 15%;
+            a{
+                @include transition(all 1s);
+                position: absolute; background: $HNblack; width: 150px; height: 40px; line-height: 40px; font-size: 18px; text-align: center; top: 600px; left: 1100px; z-index: 120;
+                &:hover, &:focus{
+                    @include transform(scale(1.1));
+                    color: #ff7d0f;
+                }
+            }
+        }
     }
     .design_cnt3{
-        width: 100%; height: 100vh;
+        width: 100%; height: 100vh; position: relative;
+        h2{
+            @include transition(all 1s);
+            position: absolute; top: 10%; left: 17%; font-size: 30px; opacity: 0; margin-top: 200px;
+            &.move{margin-top: 0; opacity: 1;}
+        }
+        .swiper-container{
+            top: 20%; left: 10%;
+            a{
+                @include transition(all 1s);
+                position: absolute; background: $HNblack; width: 150px; height: 40px; line-height: 40px; font-size: 18px; text-align: center; top: 600px; left: 1100px; z-index: 120;
+                &:hover, &:focus{
+                    @include transform(scale(1.1));
+                    color: #ff7d0f;
+                }
+            }
+        }
     }
     .design_cnt4{
-        width: 100%; height: 100vh;
+        width: 100%; height: 100vh; position: relative;
+        h2{
+            @include transition(all 1s);
+            position: absolute; top: 10%; left: 10%; font-size: 30px; opacity: 0; margin-top: 200px;
+            &.move{margin-top: 0; opacity: 1;}
+        }
+        .swiper-container{
+            top: 20%; left: 10%;
+        }
     }
     .design_cnt5{
-        width: 100%; height: 100vh;
+        width: 100%; height: 100vh; position: relative;
+        .cnt_bg{position: fixed; top: 0; left: 0; width: 100%; height: auto; z-index: -1; display: none;}
+        h2{
+            @include transition(all 1s);
+            position: absolute; top: 10%; left: 30%; font-size: 30px; opacity: 0; margin-top: 200px;
+            &.move{margin-top: 0; opacity: 1;}
+        }
+        .imunmaps{
+            @include transition(all 1s);
+            position: absolute; top: 18%; left: 30%; width: 40%; height: auto; opacity: 0; margin-top: 200px;
+            &.move{margin-top: 0; opacity: 1;}
+        }
     }
+    .swiper-container{
+        @include transition(all 1s);
+        position: absolute; width: 1300px; height: 700px; opacity: 0; margin-top: 200px;
+        &.move{margin-top: 0; opacity: 1;}
+        .swiper-wrapper{
+            @include transform(translateX(-40%));
+            margin-left: 50%;
+            .swiper-slide{
+                position: relative;
+                figure{width: 600px; height: 600px; border: 5px solid #fff;}
+                p{
+                    position: absolute; bottom: 5%; right: 17%; padding: 30px 0; width: 400px; height: 400px; color: $HNblack; background: $HNgrey; font-size: 15px; line-height: 2.2; z-index: -1;
+                    &:before{content: ""; position: absolute; bottom: 0; left: -100px; width: 100px; height: 100%; background: $HNgrey;}
+                }
+            }
+        }
+        .swiper-button-prev{position: absolute; top: 130px; left: 1050px; width: 50px; height: 50px;}
+        .swiper-button-next{position: absolute; top: 130px; left: 1150px; width: 50px; height: 50px;}
+        .swiper-button-prev::after, .swiper-button-next::after{display: block; opacity: 0;}
+    }
+    .cnt_bg{display: none; width: 100%; height: 100vh; position: fixed; top: 0; left: 0;}
 }
 
 /* web */
 #content.web_cnt{
     width: 100%; height: 300vh; overflow: hidden;
-    .web_bg{position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: url(../images/common/nav_bg.jpg) no-repeat center; z-index: -1;}
+    video{position: fixed; top: 0; left: 0; width: 100%; height: auto; z-index: -1;}
     .web_blur_box{
         @include transform(translateY(-300px));
         @include transition(transform 0.5s);
-        position: fixed; top: -5%; right: -5%; width: 90%; height: 90%; border: 3px solid $HNgrey; background: $HNblack; opacity: 0.95;
+        position: fixed; top: 0; right: -5%; width: 90%; height: 100%; border: 3px solid $HNgrey; background: $HNblack; opacity: 0.85;
         &.action{@include transform(translateY(0));}
     }
     .web_cnt1{
@@ -452,7 +558,7 @@ body{font-family: DOSm; font-size: 20px; line-height: 1.5; color: $HNgrey; word-
         h1{
             @include transform(translateY(-300px));
             @include transition(transform 1s);
-            position: absolute; top: 30%; left: 20%; width: 50%; height: auto;
+            position: absolute; top: 20%; left: 20%; width: 50%; height: auto;
             &.action{@include transform(translateY(0));}
             &:before, &:after{
                 @include transition(all 0.5s);
@@ -471,12 +577,12 @@ body{font-family: DOSm; font-size: 20px; line-height: 1.5; color: $HNgrey; word-
         h2{
             @include transform(rotate(270deg));
             @include transition(all 1s);
-            position: absolute; top: 59%; left: 6%; font-size: 30px; margin-top: 200px; opacity: 0;
+            position: absolute; top: 59%; left: 8%; font-size: 30px; margin-top: 200px; opacity: 0;
             &.move{margin-top: 0; opacity: 1;}
         } /* writing-mode : vertical-rl; */
         .web_tab{
             @include transition(all 1s);
-            position: absolute; top: 12%; left: 10%; width: 80%; height: 65%; opacity: 0; margin-top: 200px;
+            position: absolute; top: 15%; left: 12%; width: 80%; height: 65%; opacity: 0; margin-top: 200px;
             &.move{margin-top: 0; opacity: 1;}
             .tablist{
                 position: absolute; top: 0; left: 0; width: 150px; height: 148px; background: #000; text-align: center; line-height: 50px; z-index: 100;
@@ -489,7 +595,8 @@ body{font-family: DOSm; font-size: 20px; line-height: 1.5; color: $HNgrey; word-
             }
             .tabpanel_box{position: absolute; top: 0; left: 130px; width: 1300px; height: 630px; border: 3px solid #fff;}
             .tabpanel{
-                position: absolute; display: none; top: 0; left: 0; height: 100%; width: 100%; background: #00f;
+                position: absolute; display: none; top: 0; left: 0; height: 100%; width: 100%; background: $HNgrey;
+                iframe{width: 100%; height: 100%;}
                 &.tab_on{display: block;}
             }
         }
@@ -507,7 +614,7 @@ body{font-family: DOSm; font-size: 20px; line-height: 1.5; color: $HNgrey; word-
         } /* writing-mode : vertical-rl; */
         .web_tab{
             @include transition(all 1s);
-            position: absolute; top: 12%; right: 3%; width: 80%; height: 65%; opacity: 0; margin-top: 200px;
+            position: absolute; top: 15%; right: 3%; width: 80%; height: 65%; opacity: 0; margin-top: 200px;
             &.move{margin-top: 0; opacity: 1;}
             .tablist{
                 position: absolute; top: 0; left: 0; width: 150px; height: 148px; background: #000; text-align: center; line-height: 50px; z-index: 100;
@@ -520,7 +627,8 @@ body{font-family: DOSm; font-size: 20px; line-height: 1.5; color: $HNgrey; word-
             }
             .tabpanel_box{position: absolute; top: 0; left: 130px; width: 1300px; height: 630px; border: 3px solid #fff;}
             .tabpanel{
-                position: absolute; display: none; top: 0; left: 0; height: 100%; width: 100%; background: #00f;
+                position: absolute; display: none; top: 0; left: 0; height: 100%; width: 100%; background: $HNgrey;
+                iframe{width: 100%; height: 100%;}
                 &.tab_on{display: block;}
             }
         }
@@ -557,35 +665,6 @@ body{font-family: DOSm; font-size: 20px; line-height: 1.5; color: $HNgrey; word-
 @include keyframes(graph60) {
     0%{height: 0;}
     100%{height: 60%;}
-}
-
-/* choice */
-#content.cho_cnt{
-    position: relative; width: 100vw; height: 100vh; overflow: hidden;
-    video{position: fixed; top: 0; left: 0; width: 100%; height: auto; z-index: -1;}
-    .cho_blur_box{
-        position: absolute; top: -150%; left: 5%; width: 90%; height: 90%; border: 3px solid $HNgrey; background: $HNblack; opacity: 0;
-    }
-    .cho_design{ 
-        position: absolute; top: 30%; left: 20%; width: 250px; height: 200px; opacity: 0;
-        &:before, &:after{
-            @include transition(all 0.5s);
-            opacity: 0;
-        }
-        &:before{content: "DESIGN_PAGE"; position: absolute; top: 65%; left: -8%; padding-left: 20px; width: 360px; height: 60px; font-size: 60px; line-height: 60px; background: #000;}
-        &:after{content: "X"; position: absolute; top: 46%; right: -57%; width: 50px; height: 50px; line-height: 50px; font-size: 65px; color: $HNgreen; background: #fff; text-align: center;}
-        &:hover:before, &:focus:before, &:hover:after, &:focus:after{opacity: 1;}
-    }
-    .cho_web{
-        position: absolute; top: 42%; right: 20%; width: 400px; height: auto; opacity: 0;
-        &:before, &:after{
-            @include transition(all 0.5s);
-            opacity: 0;
-        }
-        &:before{content: "WEB_PAGE"; position: absolute; top: 20%; left: 10%; padding-left: 20px; width: 320px; height: 70px; font-size: 70px; line-height: 70px; background: #000;}
-        &:after{content: "X"; position: absolute; top: 35%; right: -5%; width: 50px; height: 50px; line-height: 50px; font-size: 65px; color: $HNgreen; background: #fff; text-align: center;}
-        &:hover:before, &:focus:before, &:hover:after, &:focus:after{opacity: 1;}
-    }
 }
 
 @media all and (max-width: 1260px) {

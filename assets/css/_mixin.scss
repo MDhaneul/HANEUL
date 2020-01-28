@@ -17,6 +17,10 @@
     -o-transition: $value;
     transition: $value;
 }
+@mixin blur($value) {
+    -webkit-filter: blur($value);
+    filter: blur($value);
+}
 @mixin transDelay($value) {
     -webkit-transition-delay: $value;
     -moz-transition-delay: $value;
@@ -39,6 +43,11 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+}
+@mixin radius ($value...) {
+    -webkit-border-radius: $value;
+    -moz-border-radius: $value;
+    border-radius: $value;
 }
 @mixin keyframes($value...) {
     @-webkit-keyframes #{$value} {

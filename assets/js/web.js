@@ -32,17 +32,17 @@ $(document).ready(function() {
             console.log(scrollY, cntPosY);
 
             if (scrollY <= cntPosY[0] - 200) {
-                $bBox.stop().animate({top: '-5%', left: '15%', width: '90%', height: '90%'});
+                $bBox.stop().animate({top: 0, left: '15%', width: '90%', height: '100%'});
                 $('#content article').find('video').css({display: 'none'});
                 $('#content .web_bg').css({display: 'block'});
             }
             else if (scrollY <= cntPosY[1] - 400) {
-                $bBox.stop().animate({top: '5%', left: '-5%', width: '95%', height: '90%'});
+                $bBox.stop().animate({top: '-5%', left: '-5%', width: '95%', height: '110%'});
                 $('#cnt2').find('video').css({display: 'block'}).parent().siblings().find('video').css({display: 'none'});
                 $('#content .web_bg').css({display: 'none'});
             }
             else {
-                $bBox.stop().animate({top: '5%', left: '10%', width: '95%', height: '90%'});
+                $bBox.stop().animate({top: 0, left: '10%', width: '95%', height: '100%'});
                 $('#cnt3').find('video').css({display: 'block'}).parent().siblings().find('video').css({display: 'none'});
                 $('#content .web_bg').css({display: 'none'});
             }

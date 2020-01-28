@@ -5,15 +5,10 @@ $(document).ready(function() {
     var $last = $gnb.find('[data-link="last"]');
 
     $gnb.prepend('<div class="gnb_window"></div>');
+    $gnb.prepend('<div class="gnb_bg"></div>');
     $('#hamburger').on('click', function () {
         if ($(this).hasClass('addon')) {
-            $gnb.stop().slideUp().animate({
-                opacity : 0
-            }, function () {
-                $(this).css({
-                    visibility: 'hidden'
-                })
-            });
+            $gnb.stop().fadeOut(600).animate({visibility: 'hidden'});
 
             $(this).removeClass('addon').find('.sr-only').text('메뉴 열기');
             $('.return_home').removeClass('addon');
@@ -25,10 +20,7 @@ $(document).ready(function() {
             $(this).addClass('addon').find('sr-only').text('메뉴 닫기');
             $('.return_home').addClass('addon');
 
-            $gnb.css({
-                visibility: 'visible',
-                opacity: 1
-            }).stop().slideDown();
+            $gnb.css({visibility: 'visible'}).stop().fadeIn(600);
             $first.focus();
 
             $first.on('keydown', function (e) {
@@ -52,9 +44,11 @@ $(document).ready(function() {
         if ($(this).next().hasClass('dep_open')) {
             $(this).removeClass('open_icon').next().removeClass('dep_open');
             $(this).next().find('.dep_bg').remove();
+            $gnb.removeClass('window_on');
         } else {
             $(this).addClass('open_icon').next().addClass('dep_open');
             $(this).next().prepend('<div class="dep_bg"></div>');
+            $gnb.addClass('window_on');
         }
     });
 });
