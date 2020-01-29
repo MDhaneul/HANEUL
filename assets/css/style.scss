@@ -459,9 +459,13 @@ body{font-family: DOSm; font-size: 20px; line-height: 1.5; color: $HNgrey; word-
     }
     .design_cnt2{
         width: 100%; height: 100vh; position: relative;
+        .cnt_bg{
+            @include blur(5px);
+            background: url(../images/design/MF_bg.jpg) no-repeat center; z-index: -1;
+        }
         h2{
             @include transition(all 1s);
-            position: absolute; top: 10%; left: 22%; font-size: 30px; opacity: 0; margin-top: 200px;
+            position: absolute; top: 12%; left: 22%; font-size: 30px; opacity: 0; margin-top: 200px;
             &.move{margin-top: 0; opacity: 1;}
         }
         .swiper-container{
@@ -478,9 +482,13 @@ body{font-family: DOSm; font-size: 20px; line-height: 1.5; color: $HNgrey; word-
     }
     .design_cnt3{
         width: 100%; height: 100vh; position: relative;
+        .cnt_bg{
+            @include blur(5px);
+            background: url(../images/design/GC_bg.jpg) no-repeat center; z-index: -1;
+        }
         h2{
             @include transition(all 1s);
-            position: absolute; top: 10%; left: 17%; font-size: 30px; opacity: 0; margin-top: 200px;
+            position: absolute; top: 12%; left: 17%; font-size: 30px; opacity: 0; margin-top: 200px;
             &.move{margin-top: 0; opacity: 1;}
         }
         .swiper-container{
@@ -499,16 +507,43 @@ body{font-family: DOSm; font-size: 20px; line-height: 1.5; color: $HNgrey; word-
         width: 100%; height: 100vh; position: relative;
         h2{
             @include transition(all 1s);
-            position: absolute; top: 10%; left: 10%; font-size: 30px; opacity: 0; margin-top: 200px;
+            position: absolute; top: 12%; right: 35%; font-size: 30px; opacity: 0; margin-top: 200px;
             &.move{margin-top: 0; opacity: 1;}
         }
         .swiper-container{
-            top: 20%; left: 10%;
+            top: 20%; left: 25%; width: 900px;
+            .swiper-wrapper .swiper-slide{
+                text-align: center; line-height: 50px;
+                figure{margin-left: 65px;}
+                strong{position: absolute; width: 230px; height: 50px; font-size: 25px; bottom: 13%; right: 20%; background: $HNblack; border: 3px solid #fff; font-weight: 400;}
+                a{
+                    @include transition(all 1s);
+                    position: absolute; top: 10%; left: 0; width: 200px; height: 50px; background: $HNblack; border: 3px solid #fff;
+                    &:hover, &:focus{
+                        @include transform(scale(1.1));
+                        color: #ff7d0f;
+                    }
+                }
+            }
+            .swiper-button-prev{top: 45%; left: 50px;}
+            .swiper-button-next{top: 45%; left: 850px;}
+        }
+        .cnt_bg{
+            z-index: -1;
+            .slide{
+                position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none; background: no-repeat center;
+                &:nth-child(1){background-image: url(../images/design/orbit_bg.jpg); display: block;}
+                &:nth-child(2){background-image: url(../images/design/KY_bg.jpg);}
+                &:nth-child(3){background-image: url(../images/design/font_bg.jpg);}
+                &:nth-child(4){background-image: url(../images/design/kongster_bg.jpg);}
+                @include bgSize(cover);
+                @include blur(5px);
+            }
         }
     }
     .design_cnt5{
         width: 100%; height: 100vh; position: relative;
-        .cnt_bg{position: fixed; top: 0; left: 0; width: 100%; height: auto; z-index: -1; display: none;}
+        .cnt_bg{height: auto; z-index: -1;}
         h2{
             @include transition(all 1s);
             position: absolute; top: 10%; left: 30%; font-size: 30px; opacity: 0; margin-top: 200px;
