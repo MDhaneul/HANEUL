@@ -115,12 +115,11 @@ $(document).ready(function() {
     console.log(total);
 
     function sliders() {
-            //1-4) .visual > div를 애니메이트 : 현재보이는 슬라이드 left0에서 -100%, 클릭한 슬라이드(nextNum에 담긴) left 100% 에서 0으로 이동
-            $indiEle.eq(current).css('left', 0).stop().animate({left: '-100%'}, function () {
-                $(this).hide();
-            });
-            $indiEle.eq(nextNum).css({display: 'block', left: '100%'}).stop().animate({left: 0});
-            current = nextNum; //애니메이션이 완료된후 현재 보여지는 인덱스번호를 다시 current에 대입시켜서 변경
+        $indiEle.eq(current).css('left', 0).stop().animate({top: '-100%'}, function () {
+            $(this).hide();
+        });
+        $indiEle.eq(nextNum).css({display: 'block', top: '100%'}).stop().animate({top: 0});
+        current = nextNum;
     }
 
     $bgbtn.on('click', function () {

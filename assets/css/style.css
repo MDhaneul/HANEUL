@@ -582,7 +582,7 @@ body {
       -o-transition: opacity 0.5s;
       transition: opacity 0.5s;
       position: absolute;
-      top: 50%;
+      top: 20%;
       left: 15%;
       width: 700px;
       height: 700px;
@@ -648,13 +648,26 @@ body {
     position: relative;
     width: 100%;
     height: 100vh; }
+    #content.about_cnt .about_cnt4 h2 {
+      -webkit-transition: all 1s;
+      -moz-transition: all 1s;
+      -o-transition: all 1s;
+      transition: all 1s;
+      position: absolute;
+      font-size: 50px;
+      top: 20%;
+      left: 30%;
+      font-size: 30px;
+      opacity: 0; }
+      #content.about_cnt .about_cnt4 h2.move {
+        opacity: 1; }
     #content.about_cnt .about_cnt4 ul {
       -webkit-transition: opacity 0.5s;
       -moz-transition: opacity 0.5s;
       -o-transition: opacity 0.5s;
       transition: opacity 0.5s;
       position: absolute;
-      top: 20%;
+      top: 30%;
       left: 30%;
       width: 700px;
       height: 700px;
@@ -673,19 +686,40 @@ body {
           opacity: 0;
           white-space: nowrap;
           overflow: hidden; }
-          #content.about_cnt .about_cnt4 ul li button:hover, #content.about_cnt .about_cnt4 ul li button:focus {
+          #content.about_cnt .about_cnt4 ul li button:before {
+            -webkit-transition: width 1s;
+            -moz-transition: width 1s;
+            -o-transition: width 1s;
+            transition: width 1s;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -50px;
+            width: 0;
+            height: 100%;
+            background: #000;
+            opacity: 0.85;
+            z-index: -1; }
+          #content.about_cnt .about_cnt4 ul li button:hover, #content.about_cnt .about_cnt4 ul li button:focus, #content.about_cnt .about_cnt4 ul li button.select {
             color: #99CC66; }
-            #content.about_cnt .about_cnt4 ul li button:hover:before, #content.about_cnt .about_cnt4 ul li button:focus:before {
-              content: "";
-              position: absolute;
-              top: 0;
-              left: -50px;
-              display: block;
-              width: 550px;
-              height: 100%;
-              background: #000;
-              opacity: 0.85;
-              z-index: -1; }
+            #content.about_cnt .about_cnt4 ul li button:hover:before, #content.about_cnt .about_cnt4 ul li button:focus:before, #content.about_cnt .about_cnt4 ul li button.select:before {
+              width: 550px; }
+          #content.about_cnt .about_cnt4 ul li button.select:after {
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            content: "";
+            position: absolute;
+            top: 12.5px;
+            left: -25px;
+            z-index: 100;
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            -webkit-animation: wave2 2s infinite;
+            -moz-animation: wave2 2s infinite;
+            -o-animation: wave2 2s infinite;
+            animation: wave2 2s infinite; }
         #content.about_cnt .about_cnt4 ul li.typing:nth-child(1) button {
           -webkit-animation: typing 1s steps(40, end) forwards, blink-caret 0.5s 2 forwards;
           -moz-animation: typing 1s steps(40, end) forwards, blink-caret 0.5s 2 forwards;
@@ -729,12 +763,21 @@ body {
           animation: typing 1s 6s steps(40, end) forwards, blink-caret 0.5s 6s infinite;
           width: 440px; }
         #content.about_cnt .about_cnt4 ul li div {
+          -webkit-transition: all 1s;
+          -moz-transition: all 1s;
+          -o-transition: all 1s;
+          transition: all 1s;
           position: absolute;
           width: 70px;
           height: 370px;
           left: 550px;
           border: 3px solid #fff;
-          background: #2e2e2e; }
+          background: #2e2e2e;
+          margin-top: 200px;
+          opacity: 0; }
+          #content.about_cnt .about_cnt4 ul li div.move {
+            margin-top: 0;
+            opacity: 1; }
           #content.about_cnt .about_cnt4 ul li div:before {
             content: "";
             position: absolute;
@@ -762,17 +805,17 @@ body {
             animation: graph90 2s 1 forwards, wave 5s infinite;
             background: #99CC66; }
           #content.about_cnt .about_cnt4 ul li:nth-child(1) div:after {
-            content: "Skill Point : 90% \A HTML5 : Excellent!!! \A CSS3.0 : Excellent!!!"; }
+            content: "Skill Point : 90% \A HTML5 : Excellent \A CSS3.0 : Excellent \A SCSS : Excellent"; }
         #content.about_cnt .about_cnt4 ul li:nth-child(2) div {
           top: -58px; }
           #content.about_cnt .about_cnt4 ul li:nth-child(2) div:before {
-            -webkit-animation: graph60 2s 1 forwards, wave 5s infinite;
-            -moz-animation: graph60 2s 1 forwards, wave 5s infinite;
-            -o-animation: graph60 2s 1 forwards, wave 5s infinite;
-            animation: graph60 2s 1 forwards, wave 5s infinite;
-            background: #ff7d0f; }
+            -webkit-animation: graph70 2s 1 forwards, wave 5s infinite;
+            -moz-animation: graph70 2s 1 forwards, wave 5s infinite;
+            -o-animation: graph70 2s 1 forwards, wave 5s infinite;
+            animation: graph70 2s 1 forwards, wave 5s infinite;
+            background: #3db9df; }
           #content.about_cnt .about_cnt4 ul li:nth-child(2) div:after {
-            content: "Skill Point : 60% \A jQuery : Good!!"; }
+            content: "Skill Point : 70% \A jQuery : Good"; }
         #content.about_cnt .about_cnt4 ul li:nth-child(3) div {
           top: -116px; }
           #content.about_cnt .about_cnt4 ul li:nth-child(3) div:before {
@@ -782,7 +825,7 @@ body {
             animation: graph100 2s 1 forwards, wave 5s infinite;
             background: #99CC66; }
           #content.about_cnt .about_cnt4 ul li:nth-child(3) div:after {
-            content: "Skill Point : 100% \A XD : Excellent!!! \A Zeplin : Excellent!!!"; }
+            content: "Skill Point : 100% \A XD : Excellent \A Zeplin : Excellent \A Bootstrap : Excellent \A Wordpress : Excellent"; }
         #content.about_cnt .about_cnt4 ul li:nth-child(4) div {
           top: -174px; }
           #content.about_cnt .about_cnt4 ul li:nth-child(4) div:before {
@@ -792,7 +835,7 @@ body {
             animation: graph90 2s 1 forwards, wave 5s infinite;
             background: #99CC66; }
           #content.about_cnt .about_cnt4 ul li:nth-child(4) div:after {
-            content: "Skill Point : 90% \A Photoshop : Excellent!!!"; }
+            content: "Skill Point : 90% \A Photoshop : Excellent"; }
         #content.about_cnt .about_cnt4 ul li:nth-child(5) div {
           top: -232px; }
           #content.about_cnt .about_cnt4 ul li:nth-child(5) div:before {
@@ -802,17 +845,17 @@ body {
             animation: graph90 2s 1 forwards, wave 5s infinite;
             background: #99CC66; }
           #content.about_cnt .about_cnt4 ul li:nth-child(5) div:after {
-            content: "Skill Point : 90% \A Illustrator : Excellent!!!"; }
+            content: "Skill Point : 90% \A Illustrator : Excellent"; }
         #content.about_cnt .about_cnt4 ul li:nth-child(6) div {
           top: -290px; }
           #content.about_cnt .about_cnt4 ul li:nth-child(6) div:before {
-            -webkit-animation: graph60 2s 1 forwards, wave 5s infinite;
-            -moz-animation: graph60 2s 1 forwards, wave 5s infinite;
-            -o-animation: graph60 2s 1 forwards, wave 5s infinite;
-            animation: graph60 2s 1 forwards, wave 5s infinite;
-            background: #ff7d0f; }
+            -webkit-animation: graph70 2s 1 forwards, wave 5s infinite;
+            -moz-animation: graph70 2s 1 forwards, wave 5s infinite;
+            -o-animation: graph70 2s 1 forwards, wave 5s infinite;
+            animation: graph70 2s 1 forwards, wave 5s infinite;
+            background: #3db9df; }
           #content.about_cnt .about_cnt4 ul li:nth-child(6) div:after {
-            content: "Skill Point : 60% \A InDesign : Good!!"; }
+            content: "Skill Point : 70% \A InDesign : Good"; }
         #content.about_cnt .about_cnt4 ul li:nth-child(7) div {
           top: -348px; }
           #content.about_cnt .about_cnt4 ul li:nth-child(7) div:before {
@@ -822,7 +865,7 @@ body {
             animation: graph70 2s 1 forwards, wave 5s infinite;
             background: #3db9df; }
           #content.about_cnt .about_cnt4 ul li:nth-child(7) div:after {
-            content: "Skill Point : 70% \A Premiere : Excellent!!! \A After Effects : Good!!"; }
+            content: "Skill Point : 70% \A Premiere : Excellent!!! \A After Effects : Good"; }
 
 /* choice */
 #content.cho_cnt {
@@ -1035,8 +1078,8 @@ body {
       -o-transition: all 1s;
       transition: all 1s;
       position: absolute;
-      top: 12%;
-      left: 22%;
+      top: 15%;
+      left: 18%;
       font-size: 30px;
       opacity: 0;
       margin-top: 200px; }
@@ -1053,21 +1096,16 @@ body {
         transition: all 1s;
         position: absolute;
         background: #2e2e2e;
-        width: 150px;
+        width: 460px;
         height: 40px;
         line-height: 40px;
         font-size: 18px;
         text-align: center;
-        top: 600px;
-        left: 1100px;
+        top: 760px;
+        left: 850px;
         z-index: 120; }
         #content.design_cnt .design_cnt2 .swiper-container a:hover, #content.design_cnt .design_cnt2 .swiper-container a:focus {
-          -webkit-transform: scale(1.1);
-          -moz-transform: scale(1.1);
-          -o-transform: scale(1.1);
-          -ms-transform: scale(1.1);
-          transform: scale(1.1);
-          color: #ff7d0f; }
+          background: #ff7d0f; }
   #content.design_cnt .design_cnt3 {
     width: 100%;
     height: 100vh;
@@ -1083,8 +1121,8 @@ body {
       -o-transition: all 1s;
       transition: all 1s;
       position: absolute;
-      top: 12%;
-      left: 17%;
+      top: 13%;
+      left: 13%;
       font-size: 30px;
       opacity: 0;
       margin-top: 200px; }
@@ -1101,21 +1139,16 @@ body {
         transition: all 1s;
         position: absolute;
         background: #2e2e2e;
-        width: 150px;
+        width: 460px;
         height: 40px;
         line-height: 40px;
         font-size: 18px;
         text-align: center;
-        top: 600px;
-        left: 1100px;
+        top: 760px;
+        left: 850px;
         z-index: 120; }
         #content.design_cnt .design_cnt3 .swiper-container a:hover, #content.design_cnt .design_cnt3 .swiper-container a:focus {
-          -webkit-transform: scale(1.1);
-          -moz-transform: scale(1.1);
-          -o-transform: scale(1.1);
-          -ms-transform: scale(1.1);
-          transform: scale(1.1);
-          color: #ff7d0f; }
+          background: #ff7d0f; }
   #content.design_cnt .design_cnt4 {
     width: 100%;
     height: 100vh;
@@ -1126,8 +1159,8 @@ body {
       -o-transition: all 1s;
       transition: all 1s;
       position: absolute;
-      top: 12%;
-      right: 35%;
+      top: 15%;
+      left: 40%;
       font-size: 30px;
       opacity: 0;
       margin-top: 200px; }
@@ -1136,7 +1169,7 @@ body {
         opacity: 1; }
     #content.design_cnt .design_cnt4 .swiper-container {
       top: 20%;
-      left: 25%;
+      left: 35%;
       width: 900px; }
       #content.design_cnt .design_cnt4 .swiper-container .swiper-wrapper .swiper-slide {
         text-align: center;
@@ -1148,8 +1181,8 @@ body {
           width: 230px;
           height: 50px;
           font-size: 25px;
-          bottom: 13%;
-          right: 20%;
+          bottom: 10%;
+          right: 2%;
           background: #2e2e2e;
           border: 3px solid #fff;
           font-weight: 400; }
@@ -1160,18 +1193,13 @@ body {
           transition: all 1s;
           position: absolute;
           top: 10%;
-          left: 0;
+          left: 5%;
           width: 200px;
           height: 50px;
           background: #2e2e2e;
           border: 3px solid #fff; }
           #content.design_cnt .design_cnt4 .swiper-container .swiper-wrapper .swiper-slide a:hover, #content.design_cnt .design_cnt4 .swiper-container .swiper-wrapper .swiper-slide a:focus {
-            -webkit-transform: scale(1.1);
-            -moz-transform: scale(1.1);
-            -o-transform: scale(1.1);
-            -ms-transform: scale(1.1);
-            transform: scale(1.1);
-            color: #ff7d0f; }
+            background: #ff7d0f; }
       #content.design_cnt .design_cnt4 .swiper-container .swiper-button-prev {
         top: 45%;
         left: 50px; }
@@ -1217,7 +1245,7 @@ body {
       transition: all 1s;
       position: absolute;
       top: 10%;
-      left: 30%;
+      left: 25%;
       font-size: 30px;
       opacity: 0;
       margin-top: 200px; }
@@ -1231,8 +1259,8 @@ body {
       transition: all 1s;
       position: absolute;
       top: 18%;
-      left: 30%;
-      width: 40%;
+      left: 25%;
+      width: 50%;
       height: auto;
       opacity: 0;
       margin-top: 200px; }
@@ -1245,56 +1273,41 @@ body {
     -o-transition: all 1s;
     transition: all 1s;
     position: absolute;
-    width: 1300px;
-    height: 700px;
+    width: 100%;
+    height: 800px;
     opacity: 0;
     margin-top: 200px; }
     #content.design_cnt .swiper-container.move {
       margin-top: 0;
       opacity: 1; }
-    #content.design_cnt .swiper-container .swiper-wrapper {
-      -webkit-transform: translateX(-40%);
-      -moz-transform: translateX(-40%);
-      -o-transform: translateX(-40%);
-      -ms-transform: translateX(-40%);
-      transform: translateX(-40%);
-      margin-left: 50%; }
-      #content.design_cnt .swiper-container .swiper-wrapper .swiper-slide {
-        position: relative; }
-        #content.design_cnt .swiper-container .swiper-wrapper .swiper-slide figure {
-          width: 600px;
-          height: 600px;
-          border: 5px solid #fff; }
-        #content.design_cnt .swiper-container .swiper-wrapper .swiper-slide p {
-          position: absolute;
-          bottom: 5%;
-          right: 17%;
-          padding: 30px 0;
-          width: 400px;
-          height: 400px;
-          color: #2e2e2e;
-          background: #ededed;
-          font-size: 15px;
-          line-height: 2.2;
-          z-index: -1; }
-          #content.design_cnt .swiper-container .swiper-wrapper .swiper-slide p:before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: -100px;
-            width: 100px;
-            height: 100%;
-            background: #ededed; }
+    #content.design_cnt .swiper-container .swiper-wrapper .swiper-slide {
+      position: relative; }
+      #content.design_cnt .swiper-container .swiper-wrapper .swiper-slide figure {
+        width: 800px;
+        height: 800px;
+        margin-left: 50px; }
+      #content.design_cnt .swiper-container .swiper-wrapper .swiper-slide p {
+        position: absolute;
+        top: 20px;
+        left: 850px;
+        width: 400px;
+        height: 800px;
+        color: #2e2e2e;
+        background: #ededed;
+        font-size: 15px;
+        line-height: 2.2;
+        z-index: -1;
+        padding: 30px; }
     #content.design_cnt .swiper-container .swiper-button-prev {
       position: absolute;
-      top: 130px;
-      left: 1050px;
+      top: 690px;
+      left: 900px;
       width: 50px;
       height: 50px; }
     #content.design_cnt .swiper-container .swiper-button-next {
       position: absolute;
-      top: 130px;
-      left: 1150px;
+      top: 690px;
+      left: 1230px;
       width: 50px;
       height: 50px; }
     #content.design_cnt .swiper-container .swiper-button-prev::after, #content.design_cnt .swiper-container .swiper-button-next::after {
@@ -1302,11 +1315,11 @@ body {
       opacity: 0; }
   #content.design_cnt .cnt_bg {
     display: none;
-    width: 100%;
-    height: 100vh;
+    width: 110%;
+    height: 110vh;
     position: fixed;
-    top: 0;
-    left: 0; }
+    top: -5%;
+    left: -5%; }
 
 /* web */
 #content.web_cnt {
@@ -1641,6 +1654,27 @@ body {
     opacity: 0.5; }
   100% {
     opacity: 1; } }
+@-webkit-keyframes wave2 {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-moz-keyframes wave2 {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes wave2 {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 @-webkit-keyframes graph100 {
   0% {
     height: 0; }
@@ -1686,21 +1720,6 @@ body {
     height: 0; }
   100% {
     height: 70%; } }
-@-webkit-keyframes graph60 {
-  0% {
-    height: 0; }
-  100% {
-    height: 60%; } }
-@-moz-keyframes graph60 {
-  0% {
-    height: 0; }
-  100% {
-    height: 60%; } }
-@keyframes graph60 {
-  0% {
-    height: 0; }
-  100% {
-    height: 60%; } }
 @media all and (max-width: 1260px) {
   body {
     font-size: 16px; } }
