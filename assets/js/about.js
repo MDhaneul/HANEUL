@@ -64,7 +64,7 @@ $(document).ready(function() {
     });
 
     $skills.find('button').on('click', function () {
-        $(this).addClass('select').parent().append('<div class="skill_graph visible"></div>').siblings().find('button').removeClass('select');
+        $(this).addClass('select').parent().append('<div class="skill_graph"></div>').siblings().find('button').removeClass('select');
         $(this).parent().siblings().find('div').remove();
     });
 
