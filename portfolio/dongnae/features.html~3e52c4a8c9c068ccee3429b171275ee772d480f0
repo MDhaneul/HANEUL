@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title> dongnae Features : HANEUL </title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/tabstyle.css">
+    <!--[if lt IE 9]>
+        <script src="../../assets/js/html5shiv.min.js"></script>
+        <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="area">
+        <section id="content1" class="features">
+            <h2>Overview</h2>
+            <a href="http://MDhaneul.github.io/dongnae" target="_blank"><img src="../../assets/images/web/dongnae_logo.svg" alt="동내 로고"></a>
+            <ul>
+                <li>2019. 11. - 2019. 12.</li>
+                <li>dongnae 모바일사이트 신규 개발</li>
+                <li>Target : 캐릭터에 관심이 많은 1020세대</li>
+                <li><a href="http://MDhaneul.github.io/dongnae" target="_blank">홈페이지 바로가기</a></li>
+                <li><a href="../../assets/download/dongnae_Report.pdf" target="_blank" download="download">프로젝트 보고서 다운로드</a></li>
+            </ul>
+        </section>
+        <section id="content2" class="features">
+            <h2>1. 꿈과 행복을 담은 디자인</h2>
+            <img src="../../assets/images/web/dongnae_feature1.jpg" alt="">
+            <p>세로로 길어지는 모바일 디바이스의 특성에 맞춰 세로 전용 디자인을 하였습니다. <br><br>꿈과 행복을 나눠줄 수 있는 캐릭터의 힘을 사이트에 담고 <br>iPad까지 지원하는 레이아웃으로 태블릿 유저의 꿈까지 지켜냅니다.</p>
+        </section>
+        <section id="content3" class="features">
+            <h2>2. 아기자기 하고 자유롭지만 핵심을 놓치지 않는 구성</h2>
+            <img src="../../assets/images/web/dongnae_feature2.jpg" alt="">
+            <p>약간 정돈되지 않은 듯 보이는 디자인이지만 <br>모바일사이트에서 보여줄 수 있는 핵심을 <br>단 하나도 놓치지 않고 이용자의 손길이 닿는 곳에 배치하여 사용성도 보장합니다.</p>
+        </section>
+        <section id="content4" class="features">
+            <h2>3. 웹 시연</h2>
+            <video class="dong_vid" visible" controls poster="../../assets/images/web/dongnae_poster.jpg">
+                <source src="../../assets/videos/dongnae_web.mp4" type="video/mp4">
+                <source src="../../assets/videos/dongnae_web.ogv" type="video/ogg">
+                <source src="../../assets/videos/dongnae_web.webm" type="video/webm">
+            </video>
+            <p>애니메이션 스튜디오 다운 화려한 볼거리와 더불어 <br>동내만의 아이덴티티가 드러나는 아기자기한 디자인으로 <br>즐거운 모바일사이트 이용이 될 수 있도록 하였습니다.</p>
+        </section>
+    </div>
+</body>
+</html>

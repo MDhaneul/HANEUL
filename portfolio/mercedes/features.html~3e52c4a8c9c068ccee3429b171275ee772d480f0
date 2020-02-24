@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title> Mercedes-Benz Features : HANEUL </title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/tabstyle.css">
+    <!--[if lt IE 9]>
+        <script src="../../assets/js/html5shiv.min.js"></script>
+        <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="area">
+        <section id="content1" class="features">
+            <h2>Overview</h2>
+            <a href="http://MDhaneul.github.io/Mercedes-Benz" target="_blank"><img src="../../assets/images/web/benz_logo.png" alt="벤츠 로고"></a>
+            <ul>
+                <li>Team Project / 2019. 10. - 2019. 11.</li>
+                <li>Mercedes-Benz PC 사이트 리뉴얼</li>
+                <li>Target : 20대 후반 - 30대 후반 직장인</li>
+                <li><a href="http://MDhaneul.github.io/Mercedes-Benz" target="_blank">홈페이지 바로가기</a></li>
+                <li><a href="../../assets/download/Benz_Report.pdf" target="_blank" download="download">프로젝트 보고서 다운로드</a></li>
+            </ul>
+        </section>
+        <section id="content2" class="features">
+            <h2>1. 사용자 중심의 화면 구성</h2>
+            <img src="../../assets/images/web/benz_feature1.jpg" alt="">
+            <p>인덱스부터 내비게이션까지 유저가 가장 필요로 하는 기능을 전면배치하여 <br>사이트 이용시 정보 찾기에 어려움을 제거하였습니다. <br><br>또한 마우스와 키보드 동작을 최소화 할 수 있도록 유저가 필요한 위치에 <br>필요한 기능 버튼을 배치하도록 디자인하였습니다.</p>
+        </section>
+        <section id="content3" class="features">
+            <h2>2. Target을 고려한 럭셔리 디자인</h2>
+            <img src="../../assets/images/web/benz_feature2.jpg" alt="">
+            <p>Mercedes-Benz의 미려하고 고급스러운 디자인을 홈페이지 디자인에 반영하여 <br>Mercedes-Benz의 브랜드가치를 웹에서도 전달될 수 있도록 하였습니다.</p>
+        </section>
+        <section id="content4" class="features">
+            <h2>3. 웹 시연</h2>
+            <video class="benz_vid" visible" controls poster="../../assets/images/web/benz_poster.jpg">
+                <source src="../../assets/videos/benz_web.mp4" type="video/mp4">
+                <source src="../../assets/videos/benz_web.ogv" type="video/ogg">
+                <source src="../../assets/videos/benz_web.webm" type="video/webm">
+            </video>
+            <p>사이트의 기능에 충실하지만 전혀 지루하지 않은 홈페이지가 되도록 <br>다양한 인터랙티브 요소를 적재적소에 배치하여 즐거움을 더하였습니다.</p>
+        </section>
+    </div>
+</body>
+</html>

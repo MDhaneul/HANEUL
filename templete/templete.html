@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title> I AM HANEUL </title>
+    <link rel="icon" href="../assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/images/apple-ico.png">
+    <link rel="shortcut icon" href="../assets/images/android-ico.png">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!--[if lt IE 9]>
+        <script src="../assets/js/html5shiv.min.js"></script>
+        <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <script src="../assets/js/jquery-1.12.4.min.js"></script>
+    <script src="../assets/js/jquery.easing.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+</head>
+<body>
+    <div id="skip">
+        <a href="#content">본문 바로가기</a>
+    </div>
+
+    <header id="header">
+        <button type="button" id="hamburger">
+            <span class="sr-only">메뉴 열기</span>
+            <span class="line top"></span>
+            <span class="line mid"></span>
+            <span class="line btm"></span>
+        </button>
+        <nav id="gnb">
+            <h2 class="sr-only">주메뉴</h2>
+            <ul>
+                <li data-link="first"><a href="../index.html">HOME</a></li>
+                <li><a href="../about/about.html">ABOUT</a></li>
+                <li>
+                    <a href="">PORTFOLIO</a>
+                    <ul>
+                        <li><a href="../portfolio/choice.html">PORTFOLIO-MAIN</a></li>
+                        <li><a href="../portfolio/design.html">DESIGN</a></li>
+                        <li data-link="last"><a href="../portfolio/web.html">WEB</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="content" class="idx_bg">
+        <video class="intro_bg" tabindex="0" loop preload="auto" autoplay muted poster="assets/images/index/loadings.jpg">
+            <source src="assets/videos/idx_bg.mp4" type="video/mp4">
+        </video>
+        <div class="idx_blur_box"></div>
+        <a href="" class="idx_who"><img src="assets/images/index/idx_HN.svg" alt="ABOUT"></a>
+        <a href="" class="idx_port"><img src="assets/images/index/idx_PF.svg" alt="PORTFOLIO"></a>
+    </section>
+    
+    <footer id="footer">
+        <p>2020 JEONG HANEUL / alertsky@naver.com</p>
+    </footer>
+</body>
+</html>
