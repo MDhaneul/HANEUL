@@ -33,13 +33,22 @@ section + section{margin-top: 100px;}
     ul{
         width: 50%; height: 100%;
         li{height: 40px; line-height: 40px;}
-        li:last-child{
-            margin-top: 70px;
+        li:nth-child(4), li:last-child{
+            margin-top: 30px;
             a{
+                @include transition(background 0.5s);
                 display: block; width: 300px; height: 100%; background: $HNblack; text-align: center; color: #fff;
-                &:hover, &:focus{color: #ff7d0f;}
+                &:hover, &:focus{background: #ff7d0f;}
             }
         }
     }
 }
 #content4.features video{position: relative; width: 90%; height: auto; margin-bottom: 50px;}
+
+@media all and (max-width: 1000px) {
+    body{font-size: 18px;}
+}
+
+@media all and (max-width: 900px) {
+    body{font-size: 16px;}
+}

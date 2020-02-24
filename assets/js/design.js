@@ -13,6 +13,14 @@ $(document).ready(function() {
     var cntPosY;
     console.log(total, cntFirst);
 
+    $win.on('resize', function() {
+        var winWidth = $(this).outerWidth();
+        if (winWidth <= 1450) $('.swiper-container .swiper-wrapper .swiper-slide p').css({left: -9999});
+        else $('.swiper-container .swiper-wrapper .swiper-slide p').css({left: 850});
+    });
+
+    $win.trigger('resize');
+
     $win.on('scroll', function() { 
         var targetHeight;
         var targetTop;
@@ -42,7 +50,7 @@ $(document).ready(function() {
                 $('#cnt2 .cnt_bg').css({display: 'block'}).parent().siblings().find('.cnt_bg').css({display: 'none'});
             }
             else if (scrollY <= cntPosY[2] - 300) {
-                $bBox.stop().animate({top: "-2%", left: '-5%', width: '90%', height: '105%'});
+                $bBox.stop().animate({top: "-2%", left: '-5%', width: '95%', height: '105%'});
                 $('#content .design_bg').css({display: 'none'});
                 $('#cnt3 .cnt_bg').css({display: 'block'}).parent().siblings().find('.cnt_bg').css({display: 'none'});
             }

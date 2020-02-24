@@ -45,7 +45,7 @@ $(document).ready(function() {
                 $bBox.stop().animate({top: '-5%', left: '-5%', width: '90%', height: '110%'});
                 $('#cnt3').find('ul').children().addClass('typing').closest('article').siblings().find('ul').children().removeClass('typing');
             }
-            else {
+            else if (scrollY <= cntPosY[3] - 200) {
                 $bBox.stop().animate({top: '-5%', left: '15%', width: '90%', height: '110%'});
                 $('#cnt4').find('ul').children().addClass('typing').closest('article').siblings().find('ul').children().removeClass('typing');
             }
@@ -64,7 +64,7 @@ $(document).ready(function() {
     });
 
     $skills.find('button').on('click', function () {
-        $(this).parent().append('<div class="skill_graph"></div>');
+        $(this).addClass('select').parent().append('<div class="skill_graph"></div>').siblings().find('button').removeClass('select');
         $(this).parent().siblings().find('div').remove();
     });
 
