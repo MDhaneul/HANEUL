@@ -1031,18 +1031,16 @@ body{font-family: DOSm; font-size: 20px; line-height: 1.5; color: $HNgrey; word-
     }
 }
 
-@media all and (max-width: 1150px) {
+@media all and (max-width: 1050px) {
     #content.about_cnt .about_blur_box{opacity: 0;}
     #content.design_cnt .design_blur_box{opacity: 0;}
     #content.web_cnt .web_blur_box{opacity: 0;}
-}
-@media all and (max-width: 1050px) {
     video{display: none;}
     .idx_vidwrap .intro_video{display: block;}
     #content{background: $HNblack;}
     #header{
         #hamburger{
-            top: 50px; left: 50px; width: 35px; height: 38px;
+            top: 25px; left: 22px; width: 35px; height: 38px;
             .line{
                 background: #fff;
                 &.top{top: 0px;}
@@ -1081,11 +1079,6 @@ body{font-family: DOSm; font-size: 20px; line-height: 1.5; color: $HNgrey; word-
     }
     #footer{display: none;}
 
-    #content.web_cnt{
-        .web_cnt2 .web_tab .tabpanel_box{left: 0; width: 90vw;}
-        .web_cnt3 .web_tab .tabpanel_box{left: -10%; width: 90vw;}
-    }
-
     /* index */
     #content.idx_bg{
         .idx_who{
@@ -1102,7 +1095,13 @@ body{font-family: DOSm; font-size: 20px; line-height: 1.5; color: $HNgrey; word-
     
     /* about */
     #content.about_cnt{
-        .about_cnt1 h1:before{display: none;}
+        .about_cnt1{
+            h1{
+                @include transition(all 0.5s);
+                &.action{@include transform(rotate(270deg)); left: 55%; width: 60vw;}
+                &:before{display: none;}
+            }
+        } 
         .about_cnt2 ul{position: absolute; top: 30%; right: 0%; width: 90%; font-size: 14px;}
         .about_cnt3 ul{position: absolute; top: 20%; right: 0%; width: 90%; font-size: 14px;}
         .about_cnt4{
@@ -1201,227 +1200,107 @@ body{font-family: DOSm; font-size: 20px; line-height: 1.5; color: $HNgrey; word-
         100%{background: $HNblack;}
     }
 
-/*  
     #content.design_cnt{
-        width: 100%; height: 500vh; overflow: hidden;
-        .design_blur_box{
-            @include transform(scale(1.5));
-            @include transition(transform 0.5s);
-            position: fixed; top: 0; left: 5%; width: 90%; height: 90%; border: 3px solid $HNgrey; background: $HNblack; opacity: 0.85;
-            &.action{@include transform(scale(1));}
-        }
         .design_cnt1{
-            position: relative; width: 100%; height: 100vh;
-            video{position: fixed; top: 0; left: 0; width: 100%; height: auto; z-index: -1;}
             h1{
-                @include transform(scale(0));
-                @include transition(transform 1s);
-                position: absolute; top: 20%; left: 23%; width: 50%; height: auto;
-                &.action{@include transform(scale(1));}
-                &:before, &:after{
-                    @include transition(all 0.5s);
-                    opacity: 0; z-index: 1500;
-                }
-                &:before{content: "AWESOME DESIGN & AMAZING IDEAS"; position: absolute; top: 60%; left: 10%; padding-left: 20px; width: 530px; height: 140px; font-size: 70px; line-height: 70px; background: #000;}
-                &:after{content: "X"; position: absolute; top: 55%; right: 29%; width: 50px; height: 50px; line-height: 50px; font-size: 65px; color: $HNgreen; background: #fff; text-align: center;}
-                &:hover:before, &:focus:before, &:hover:after, &:focus:after{opacity: 1;}
+                @include transition(all 0.5s);
+                &.action{@include transform(rotate(270deg)); left: 55%; width: 55vw;}
+                &:before{display: none;}
+                &:after{display: none;}
             }
         }
         .design_cnt2{
-            width: 100%; height: 100vh; position: relative;
-            .cnt_bg{
-                @include blur(5px);
-                background: url(../images/design/MF_bg.jpg) no-repeat center; z-index: -1;
-            }
-            h2{
-                @include transition(all 1s);
-                position: absolute; top: 15%; left: 12%; font-size: 30px; opacity: 0; margin-top: 200px;
-                &.move{margin-top: 0; opacity: 1;}
+            h2{top: 0; left: 3%; font-size: 25px;
             }
             .swiper-container{
-                top: 22%; left: 9%;
+                top: 5%; left: 0;
                 a{
-                    @include transition(all 1s);
-                    position: absolute; background: $HNblack; width: 460px; height: 40px; line-height: 40px; font-size: 18px; text-align: center; top: 760px; left: 850px; z-index: 120;
-                    &:hover, &:focus{background: #ff7d0f;}
+                    @include transform(translateX(-50%));
+                    width: 150px; height: 35px; line-height: 35px; font-size: 16px; top: 567px; left: 50%;
                 }
             }
         }
         .design_cnt3{
-            width: 100%; height: 100vh; position: relative;
-            .cnt_bg{
-                @include blur(5px);
-                background: url(../images/design/GC_bg.jpg) no-repeat center; z-index: -1;
-            }
-            h2{
-                @include transition(all 1s);
-                position: absolute; top: 13%; left: 8%; font-size: 30px; opacity: 0; margin-top: 200px;
-                &.move{margin-top: 0; opacity: 1;}
-            }
+            h2{top: 0; left: 3%; font-size: 25px;}
             .swiper-container{
-                top: 20%; left: 5%;
+                top: 5%; left: 0;
                 a{
-                    @include transition(all 1s);
-                    position: absolute; background: $HNblack; width: 460px; height: 40px; line-height: 40px; font-size: 18px; text-align: center; top: 760px; left: 850px; z-index: 120;
-                    &:hover, &:focus{background: #ff7d0f;}
+                    @include transform(translateX(-50%));
+                    width: 150px; height: 35px; line-height: 35px; font-size: 16px; top: 567px; left: 50%;
                 }
             }
         }
         .design_cnt4{
-            width: 100%; height: 100vh; position: relative;
-            h2{
-                @include transition(all 1s);
-                position: absolute; top: 15%; left: 40%; font-size: 30px; opacity: 0; margin-top: 200px;
-                &.move{margin-top: 0; opacity: 1;}
-            }
+            h2{top: 0; left: 3%; font-size: 25px;}
             .swiper-container{
-                top: 20%; left: 35%; width: 900px;
+                top: 5%; left: 0%; width: 100%;
                 .swiper-wrapper .swiper-slide{
                     text-align: center; line-height: 50px;
-                    figure{margin-left: 65px;}
-                    strong{position: absolute; width: 230px; height: 50px; font-size: 25px; bottom: 10%; right: 2%; background: $HNblack; border: 3px solid #fff; font-weight: 400;}
+                    figure{margin-left: 0;}
+                    strong{
+                        @include transform(translateX(-50%));
+                        width: 150px; height: 35px; line-height: 35px; font-size: 22px; bottom: 23%; left: 50%; border:none; z-index: 1000;
+                    }
                     a{
-                        @include transition(all 1s);
-                        position: absolute; top: 10%; left: 5%; width: 200px; height: 50px; background: $HNblack; border: 3px solid #fff;
-                        &:hover, &:focus{background: #ff7d0f;}
+                        @include transform(translateX(-50%));
+                        width: 150px; height: 35px; line-height: 35px; font-size: 16px; top: 567px; left: 50%; border: none;
                     }
                 }
-                .swiper-button-prev{top: 45%; left: 50px;}
-                .swiper-button-next{top: 45%; left: 850px;}
-            }
-            .cnt_bg{
-                z-index: -1;
-                .slide{
-                    position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none; background: no-repeat center;
-                    &:nth-child(1){background-image: url(../images/design/orbit_bg.jpg); display: block;}
-                    &:nth-child(2){background-image: url(../images/design/KY_bg.jpg);}
-                    &:nth-child(3){background-image: url(../images/design/font_bg.jpg);}
-                    &:nth-child(4){background-image: url(../images/design/kongster_bg.jpg);}
-                    @include bgSize(cover);
-                    @include blur(5px);
-                }
+                .swiper-button-prev{top: 580px; left: 5%;}
+                .swiper-button-next{top: 580px; left: 90%;}
             }
         }
         .design_cnt5{
-            width: 100%; height: 100vh; position: relative;
-            .cnt_bg{height: auto; z-index: -1;}
-            h2{
-                @include transition(all 1s);
-                position: absolute; top: 10%; left: 25%; font-size: 30px; opacity: 0; margin-top: 200px;
-                &.move{margin-top: 0; opacity: 1;}
-            }
+            h2{top: 5%; left: 5%;}
             .imunmaps{
-                @include transition(all 1s);
-                position: absolute; top: 18%; left: 25%; width: 50%; height: auto; opacity: 0; margin-top: 200px;
-                &.move{margin-top: 0; opacity: 1;}
+                top: 18%; left: 5%; width: 90%; display: block;
             }
         }
         .swiper-container{
-            @include transition(all 1s);
-            position: absolute; width: 100%; height: 800px; opacity: 0; margin-top: 200px;
-            &.move{margin-top: 0; opacity: 1;}
+            width: 100%; height: 700px; max-height: 100vh;
             .swiper-wrapper{
                 .swiper-slide{
-                    position: relative;
-                    figure{width: 800px; height: 800px; margin-left: 50px;}
-                    p{position: absolute; top: 20px; left: 850px; width: 400px; height: 800px; color: $HNblack; background: $HNgrey; font-size: 15px; line-height: 2.2; z-index: -1; padding: 30px;}
+                    figure{
+                        @include transform(translateX(-50%));
+                        position: absolute; top: 0; left: 50%; width: 100%; height: 500px; max-width: 550px; margin-left: 0;
+                    }
                 }
             }
-            .swiper-button-prev{position: absolute; top: 690px; left: 900px; width: 50px; height: 50px;}
-            .swiper-button-next{position: absolute; top: 690px; left: 1230px; width: 50px; height: 50px;}
-            .swiper-button-prev::after, .swiper-button-next::after{display: block; opacity: 0;}
+            .swiper-button-prev{top: 580px; left: 5%;}
+            .swiper-button-next{top: 580px; left: 90%;}
         }
-        .cnt_bg{display: none; width: 110%; height: 110vh; position: fixed; top: -5%; left: -5%;}
     }
 
     #content.web_cnt{
-        width: 100%; height: 300vh; overflow: hidden;
-        video{position: fixed; top: 0; left: 0; width: 100%; height: auto; z-index: -1;}
-        .web_blur_box{
-            @include transform(translateY(-300px));
-            @include transition(transform 0.5s);
-            position: fixed; top: 0; right: -5%; width: 90%; height: 100%; border: 3px solid $HNgrey; background: $HNblack; opacity: 0.85;
-            &.action{@include transform(translateY(0));}
-        }
         .web_cnt1{
-            width: 100%; height: 100vh;
             h1{
-                @include transform(translateY(-300px));
-                @include transition(transform 1s);
-                position: absolute; top: 20%; left: 20%; width: 50%; height: auto;
-                &.action{@include transform(translateY(0));}
-                &:before, &:after{
-                    @include transition(all 0.5s);
-                    opacity: 0; z-index: 1500;
-                }
-                &:before{content: "BEAUTIFUL AND CONVENIENT WEB"; position: absolute; top: 50%; left: 10%; padding-left: 20px; width: 560px; height: 140px; font-size: 70px; line-height: 70px; background: #000;}
-                &:after{content: "X"; position: absolute; top: 45%; right: 30%; width: 50px; height: 50px; line-height: 50px; font-size: 65px; color: $HNgreen; background: #fff; text-align: center;}
-                &:hover:before, &:focus:before, &:hover:after, &:focus:after{opacity: 1;}
+                @include transition(all 0.5s);
+                &.action{@include transform(rotate(270deg)); left: 55%; width: 55vw;}
+                &:before{display: none;}
+                &:after{display: none;}
             }
         }
         .web_cnt2{
-            position: relative; width: 100%; height: 100vh;
-            video{
-                position: fixed; top: 0; left: 0; width: 100%; height: auto; z-index: -1; display: none;
-            }
-            h2{
-                @include transform(rotate(270deg));
-                @include transition(all 1s);
-                position: absolute; top: 59%; left: 8%; font-size: 30px; margin-top: 200px; opacity: 0;
-                &.move{margin-top: 0; opacity: 1;}
-            } 
+            h2{top: 0; left: 3%; font-size: 25px;}
             .web_tab{
-                @include transition(all 1s);
-                position: absolute; top: 13%; left: 12%; width: 80%; height: 70%; opacity: 0; margin-top: 200px;
-                &.move{margin-top: 0; opacity: 1;}
+                top: 15%; left: 5%; width: 90%; height: 80%;
                 .tablist{
-                    position: absolute; top: 0; left: 0; width: 150px; height: 148px; background: #000; text-align: center; line-height: 50px; z-index: 100;
-                    li{
-                        @include borderBox;
-                        width: 100%; height: 50px; border: 2px solid #fff; cursor: pointer;
-                    }
-                    li + li{margin-top: -1px;}
-                    li.tab_on{background: #fff; color: #000;}
+                    width: 360px; height: 50px;
+                    li{width: 120px; height: 47px;}
                 }
-                .tabpanel_box{position: absolute; top: 0; left: 130px; width: 1300px; height: 700px; border: 3px solid #fff;}
-                .tabpanel{
-                    position: absolute; display: none; top: 0; left: 0; height: 100%; width: 100%; background: $HNgrey;
-                    iframe{width: 100%; height: 100%; border: none;}
-                    &.tab_on{display: block;}
-                }
+                .tabpanel_box{left: 0; width: 100%; height: 100%; border: 2px solid #fff;}
             }
         }
         .web_cnt3{
-            position: relative; width: 100%; height: 100vh;
-            video{
-                position: fixed; top: 0; left: 0; width: 100%; height: auto; z-index: -1; display: none;
-            }
-            h2{
-                @include transform(rotate(270deg));
-                @include transition(all 1s);
-                position: absolute; top: 60%; left: 14%; font-size: 30px; margin-top: 200px; opacity: 0;
-                &.move{margin-top: 0; opacity: 1;}
-            } 
+            h2{top: 0; left: 3%; font-size: 25px;}
             .web_tab{
-                @include transition(all 1s);
-                position: absolute; top: 13%; right: 3%; width: 80%; height: 70%; opacity: 0; margin-top: 200px;
-                &.move{margin-top: 0; opacity: 1;}
+                top: 15%; left: 5%; width: 90%; height: 80%;
                 .tablist{
-                    position: absolute; top: 0; left: 0; width: 150px; height: 148px; background: #000; text-align: center; line-height: 50px; z-index: 100;
-                    li{
-                        @include borderBox;
-                        width: 100%; height: 50px; border: 2px solid #fff; cursor: pointer;
-                    }
-                    li + li{margin-top: -1px;}
-                    li.tab_on{background: #fff; color: #000;}
+                    width: 360px; height: 50px;
+                    li{width: 120px; height: 47px;}
                 }
-                .tabpanel_box{position: absolute; top: 0; left: 130px; width: 1300px; height: 700px; border: 3px solid #fff;}
-                .tabpanel{
-                    position: absolute; display: none; top: 0; left: 0; height: 100%; width: 100%; background: $HNgrey;
-                    iframe{width: 100%; height: 100%; border: none;}
-                    &.tab_on{display: block;}
-                }
+                .tabpanel_box{left: 0; width: 100%; height: 100%; border: 2px solid #fff;}
             }
         }
-    } */
+    }
 }
